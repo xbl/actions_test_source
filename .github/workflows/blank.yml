@@ -11,8 +11,8 @@ jobs:
       - name: deploy
         uses: seanmiddleditch/gha-publish-to-git@master
         with:
-          repository: https://github.com/xbl/actions_test_target
-          github_token: '${{ secrets.token  }}'
+          repository: https://github.com/xbl/actions_test_target.git
+          github_token: '${{ secrets.token }}'
           source_folder: static/html
           target_folder: static/app
         if: success() && github.event == 'push'
