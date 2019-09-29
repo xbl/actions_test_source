@@ -12,6 +12,7 @@ jobs:
         uses: seanmiddleditch/gha-publish-to-git@master
         with:
           repository: https://github.com/xbl/actions_test_target.git
+          branch: master
           github_token: '${{ secrets.token }}'
           source_folder: static/html
           target_folder: static/app
