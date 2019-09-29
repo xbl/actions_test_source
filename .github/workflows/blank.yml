@@ -4,13 +4,15 @@ on: [push]
 
 jobs:
   publish:
-    - uses: actions/checkout@master
-    - run: |
-        sh echo "hello world!"
-    - uses: seanmiddleditch/gha-publish-to-git@master
-      with:
-        repository: https://github.com/xbl/actions_test_target
-        github_token: '${{ secrets.token  }}'
-        source_folder: static/html
-        target_folder: static/app
-      if: success() && github.event == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+      - name: deploy
+        uses: seanmiddleditch/gha-publish-to-git@master
+        with:
+          repository: https://github.com/xbl/actions_test_target
+          github_token: '${{ secrets.token  }}'
+          source_folder: static/html
+          target_folder: static/app
+        if: success() && github.event == 'push'
