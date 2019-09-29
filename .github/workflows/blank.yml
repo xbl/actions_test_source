@@ -15,4 +15,3 @@ jobs:
           github_token: '${{ secrets.token }}'
           source_folder: static/html
           target_folder: static/app
-        if: success() && github.event == 'push'
