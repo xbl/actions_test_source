@@ -1,0 +1,13 @@
+name: CI
+
+on: [push]
+
+jobs:
+  publish:
+    - uses: seanmiddleditch/gha-publish-to-git@master
+      with:
+        repository: https://github.com/xbl/actions_test_target
+        github_token: '${{ secrets.token  }}'
+        source_folder: static/html
+        target_folder: static/app
+      if: success() && github.event == 'push'
