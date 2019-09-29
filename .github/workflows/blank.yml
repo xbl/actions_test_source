@@ -11,7 +11,7 @@ jobs:
       - name: deploy
         uses: seanmiddleditch/gha-publish-to-git@master
         with:
-          repository: actions_test_target
+          repository: xbl/actions_test_target
           branch: master
           github_token: '${{ secrets.token }}'
           source_folder: static/html
